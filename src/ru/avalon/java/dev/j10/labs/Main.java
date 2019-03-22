@@ -1,10 +1,17 @@
 package ru.avalon.java.dev.j10.labs;
 
+import java.time.LocalDate;
+import java.time.Month;
 import ru.avalon.java.dev.j10.labs.models.Person;
+import ru.avalon.java.dev.j10.labs.commons.Address;
+import ru.avalon.java.dev.j10.labs.models.Passport;
 
 public class Main {
 
-    Main() {
+    public static void main(String[] args) {
+        
+    
+ 
 
         /*
          * FIXME(Студент): Измените определение метода так, чтобы он стал точкой входа в приложение.
@@ -13,6 +20,21 @@ public class Main {
         Person ivanov = null;
         Person smith = null;
 
+        
+        ivanov = new Person( new Passport("3245", 345657, LocalDate.of(1990, Month.MARCH, 24),
+                                         "Иван","Иванович","Иванов",LocalDate.of(1982, 6, 21),"Выдан организацией..."),
+                             new Address("Россия","Ленинградская обл.","Санкт-Петербург","дом 88",123677));
+        
+        smith = new Person( new Passport("", 23132,"John","Edvard","Smith",LocalDate.of(1965, 11, 11), LocalDate.of(1983, 12, 23),"LAPD"),
+                            new Address("USA","CALIFORNIA","Los Angeles",883667,"78",1267));
+        
+        System.out.println(ivanov.getFullName());   
+        System.out.println(ivanov.getAddress());
+        System.out.println("");
+        System.out.println("");
+        System.out.println(smith.getFullName());
+        System.out.println(smith.getAddress());
+        
         /*
          * TODO(Студент): Создайте экземпляры класса 'Person'
          *

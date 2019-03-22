@@ -1,5 +1,7 @@
 package ru.avalon.java.dev.j10.labs.models;
 
+import ru.avalon.java.dev.j10.labs.commons.Address;
+
 /**
  * Представление о человеке.
  * <p>
@@ -12,7 +14,14 @@ package ru.avalon.java.dev.j10.labs.models;
  * </ol>
  */
 public class Person {
-
+    
+    private Passport passport;
+    private Address address;
+    
+    public Person(Passport passport, Address address) {
+        this.passport = passport;
+        this.address = address;
+    }
     /*
      * TODO(Студент): Создайте класс Address.
      *
@@ -50,6 +59,17 @@ public class Person {
         /*
          * TODO(Студент): Закончить определение метода 'getFullName()' класса 'Person'
          */
+  //      String fullName = "";
+        if ((!"".equals(passport.getFatherName ()))&&("".equals(passport.getSecName()))){
+            return passport.getName() + " " +  passport.getFatherName() + " " +passport.getSurname();
+        }
+        if (("".equals(passport.getFatherName()))&&(!"".equals(passport.getSecName()))) {
+            return passport.getName() + " " + passport.getSecName() + " " + passport.getSurname(); 
+        }
+        if (("".equals(passport.getFatherName()))&&("".equals(passport.getSecName()))) {
+            return passport.getName() + " " + passport.getSurname();
+        }
+        
         return null;
     }
 
@@ -62,6 +82,19 @@ public class Person {
      * @return адрес регистрации в виде строки.
      */
     public String getAddress() {
+        
+        if ( (address.getApart() != 0) && (address.getCorp()!= 0) ) {
+            return address.getCountry() + ", " + address.getArea() + ", " + address.getCity() + ", " + address.getIndex() + ", " + address.getHouseNumber() + ", " + address.getApart() + ", " + address.getCorp();
+        }
+        if (address.getApart() != 0) {
+            return address.getCountry() + ", " + address.getArea() + ", " + address.getCity() + ", " + address.getIndex() + ", " + address.getHouseNumber() + ", " + address.getApart();
+        }
+        if (address.getCorp()!= 0) {
+            return address.getCountry() + ", " + address.getArea() + ", " + address.getCity() + ", " + address.getIndex() + ", " + address.getHouseNumber() + ", " + address.getCorp();
+        }
+        if ( (address.getApart() == 0) && (address.getCorp()== 0) ) {
+            return address.getCountry() + ", " + address.getArea() + ", " + address.getCity() + ", " + address.getIndex() + ", " + address.getHouseNumber() ;
+        }
         /*
          * TODO(Студент): Закончить определение метода 'getAddress()' класса 'Person'
          */

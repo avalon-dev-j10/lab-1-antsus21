@@ -1,5 +1,7 @@
 package ru.avalon.java.dev.j10.labs.models;
 
+import java.time.LocalDate;
+
 /**
  * Представление о паспортных данных человека.
  * <p>
@@ -15,7 +17,76 @@ package ru.avalon.java.dev.j10.labs.models;
  *  <li> орган, выдавший документ.
  * </ol>
  */
-class Passport {
+public class Passport {
+    
+    private String series;      // серия
+    private int numPas;         // номер
+    private String name;        // имя
+    private String surName;     // фамилия
+    private String fatherName;  // отчество, если есть
+    private String secName;     // второе имя, если есть
+    private LocalDate birthday; // дата рождения
+    private LocalDate date;     // дата выдачи паспорта
+    private String org;         //орган, выдавший документ
+    
+    public String getSeries (){return series;}
+    public int getNumPas (){return numPas;}
+    public String getName (){return name;}
+    public String getSurname (){return surName;}
+    public String getFatherName (){return fatherName;}
+    public String getSecName (){return secName;}
+    public LocalDate getBirthday (){return birthday;}
+    public LocalDate getDate (){return date;}
+    public String getOrg (){return org;}
+    
+    // полный конструктор
+    public Passport (String series, int numPas, String name, String surName, String fatherName, String secName, LocalDate birthday, LocalDate date, String org) {
+        this.series = series;
+        this.numPas = numPas;
+        this.name = name;
+        this.surName = surName;
+        this.fatherName = fatherName;
+        this.secName = secName;
+        this.birthday = birthday;
+        this.date = date;
+        this.org = org;
+    }
+    // без отчества и второго имени
+    public Passport (String series, int numPas, String name, String surName, LocalDate birthday, LocalDate date, String org) {
+        this.series = series;
+        this.numPas = numPas;
+        this.name = name;
+        this.surName = surName;
+        this.fatherName = "";
+        this.secName = "";
+        this.birthday = birthday;
+        this.date = date;
+        this.org = org;
+    }
+    // без отчества
+    public Passport (String series, int numPas, String name, String secName, String surName, LocalDate birthday, LocalDate date, String org) {
+        this.series = series;
+        this.numPas = numPas;
+        this.name = name;
+        this.secName = secName;
+        this.surName = surName;
+        this.fatherName = "";
+        this.birthday = birthday;
+        this.date = date;
+        this.org = org;
+    }
+    // без второго имени
+    public Passport (String series, int numPas, LocalDate date, String name,String fatherName, String surName, LocalDate birthday,  String org) {
+        this.series = series;
+        this.numPas = numPas;
+        this.date = date;
+        this.name = name;
+        this.surName = surName;
+        this.birthday = birthday;
+        this.fatherName = fatherName;
+        this.secName = "";
+        this.org = org;
+    }
 
     /*
      * TODO(Студент): Закончить определение класса.
