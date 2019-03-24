@@ -84,16 +84,16 @@ public class Person {
     public String getAddress() {
         
         if ( (address.getApart() != 0) && (address.getCorp()!= 0) ) {
-            return address.getCountry() + ", " + address.getArea() + ", " + address.getCity() + ", " + address.getIndex() + ", " + address.getHouseNumber() + ", " + address.getApart() + ", " + address.getCorp();
+            return address.getCountry() + ", " + address.getArea() + ", " + address.getCity() + ", " + address.getStreet() + ", " + address.getIndex() + ", " + address.getHouseNumber() + ", " + address.getApart() + ", " + address.getCorp();
         }
         if (address.getApart() != 0) {
-            return address.getCountry() + ", " + address.getArea() + ", " + address.getCity() + ", " + address.getIndex() + ", " + address.getHouseNumber() + ", " + address.getApart();
+            return address.getCountry() + ", " + address.getArea() + ", " + address.getCity()+ ", " + address.getStreet() + ", " + address.getIndex() + ", " + address.getHouseNumber() + ", " + address.getApart();
         }
         if (address.getCorp()!= 0) {
-            return address.getCountry() + ", " + address.getArea() + ", " + address.getCity() + ", " + address.getIndex() + ", " + address.getHouseNumber() + ", " + address.getCorp();
+            return address.getCountry() + ", " + address.getArea() + ", " + address.getCity() + ", " + address.getStreet() + ", " + address.getIndex() + ", " + address.getHouseNumber() + ", " + address.getCorp();
         }
         if ( (address.getApart() == 0) && (address.getCorp()== 0) ) {
-            return address.getCountry() + ", " + address.getArea() + ", " + address.getCity() + ", " + address.getIndex() + ", " + address.getHouseNumber() ;
+            return address.getCountry() + ", " + address.getArea() + ", " + address.getCity() + ", " + address.getStreet()+ ", " + address.getIndex() + ", " + address.getHouseNumber() ;
         }
         /*
          * TODO(Студент): Закончить определение метода 'getAddress()' класса 'Person'
