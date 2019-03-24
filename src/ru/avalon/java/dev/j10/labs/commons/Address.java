@@ -1,6 +1,7 @@
 package ru.avalon.java.dev.j10.labs.commons;
 
 public class Address{
+    
     private String country;         // страна
     private String area;            // область
     private String city;            // город

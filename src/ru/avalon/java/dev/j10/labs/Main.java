@@ -28,12 +28,14 @@ public class Main {
         smith = new Person( new Passport("", 23132,"John","Edvard","Smith",LocalDate.of(1965, 11, 11), LocalDate.of(1983, 12, 23),"LAPD"),
                             new Address("USA","CALIFORNIA","Los Angeles","Green Street",883667,"78",1267));
         
+        System.out.println("------------------------------------------------------------------------------------");       
         System.out.println(ivanov.getFullName());   
         System.out.println(ivanov.getAddress());
-        System.out.println("");
-        System.out.println("");
+        System.out.println("------------------------------------------------------------------------------------");
+        System.out.println("------------------------------------------------------------------------------------");
         System.out.println(smith.getFullName());
         System.out.println(smith.getAddress());
+        System.out.println("------------------------------------------------------------------------------------");
         
         /*
          * TODO(Студент): Создайте экземпляры класса 'Person'

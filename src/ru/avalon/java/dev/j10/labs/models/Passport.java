@@ -39,18 +39,8 @@ public class Passport {
     public LocalDate getDate (){return date;}
     public String getOrg (){return org;}
     
-    // полный конструктор
-    public Passport (String series, int numPas, String name, String surName, String fatherName, String secName, LocalDate birthday, LocalDate date, String org) {
-        this.series = series;
-        this.numPas = numPas;
-        this.name = name;
-        this.surName = surName;
-        this.fatherName = fatherName;
-        this.secName = secName;
-        this.birthday = birthday;
-        this.date = date;
-        this.org = org;
-    }
+    // здесь был полный конструктор (никогда не используется, так что удалил его)
+
     // без отчества и второго имени
     public Passport (String series, int numPas, String name, String surName, LocalDate birthday, LocalDate date, String org) {
         this.series = series;

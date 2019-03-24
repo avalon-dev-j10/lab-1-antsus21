@@ -21,6 +21,7 @@ public class Person {
     public Person(Passport passport, Address address) {
         this.passport = passport;
         this.address = address;
+        
     }
     /*
      * TODO(Студент): Создайте класс Address.
