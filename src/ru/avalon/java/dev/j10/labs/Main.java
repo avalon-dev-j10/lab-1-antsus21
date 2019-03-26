@@ -21,8 +21,8 @@ public class Main {
         Person smith = null;
 
         
-        ivanov = new Person( new Passport("3245", 345657, LocalDate.of(1990, Month.MARCH, 24),
-                                         "Иван","Иванович","Иванов",LocalDate.of(1982, 6, 21),"Выдан организацией..."),
+        ivanov = new Person( new Passport("3245", 345657, 
+                                         "Иван","Иванович","Gfr",LocalDate.of(1982, 6, 21),LocalDate.of(1990, Month.MARCH, 24),"Выдан организацией..."),
                              new Address("Россия","Ленинградская обл.","Санкт-Петербург","ул. А. Невского","дом 88",123677));
         
         smith = new Person( new Passport("", 23132,"John","Edvard","Smith",LocalDate.of(1965, 11, 11), LocalDate.of(1983, 12, 23),"LAPD"),
