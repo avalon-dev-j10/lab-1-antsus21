@@ -21,19 +21,21 @@ public class Main {
         Person smith = null;
 
         
-        ivanov = new Person( new Passport("3245", 345657, LocalDate.of(1990, Month.MARCH, 24),
-                                         "Иван","Иванович","Иванов",LocalDate.of(1982, 6, 21),"Выдан организацией..."),
-                             new Address("Россия","Ленинградская обл.","Санкт-Петербург","дом 88",123677));
+        ivanov = new Person( new Passport("3245", 345657, 
+                                         "Иван","Иванович","Gfr",LocalDate.of(1982, 6, 21),LocalDate.of(1990, Month.MARCH, 24),"Выдан организацией..."),
+                             new Address("Россия","Ленинградская обл.","Санкт-Петербург","ул. А. Невского","дом 88",123677));
         
         smith = new Person( new Passport("", 23132,"John","Edvard","Smith",LocalDate.of(1965, 11, 11), LocalDate.of(1983, 12, 23),"LAPD"),
-                            new Address("USA","CALIFORNIA","Los Angeles",883667,"78",1267));
+                            new Address("USA","CALIFORNIA","Los Angeles","Green Street",883667,"78",1267));
         
+        System.out.println("------------------------------------------------------------------------------------");       
         System.out.println(ivanov.getFullName());   
         System.out.println(ivanov.getAddress());
-        System.out.println("");
-        System.out.println("");
+        System.out.println("------------------------------------------------------------------------------------");
+        System.out.println("------------------------------------------------------------------------------------");
         System.out.println(smith.getFullName());
         System.out.println(smith.getAddress());
+        System.out.println("------------------------------------------------------------------------------------");
         
         /*
          * TODO(Студент): Создайте экземпляры класса 'Person'

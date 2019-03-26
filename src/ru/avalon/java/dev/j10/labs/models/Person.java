@@ -21,7 +21,13 @@ public class Person {
     public Person(Passport passport, Address address) {
         this.passport = passport;
         this.address = address;
+        
     }
+    
+    /*  TODO (Замечания №1)
+       Добавить коментарии к полям и методам класса
+    */
+    
     /*
      * TODO(Студент): Создайте класс Address.
      *
@@ -71,6 +77,16 @@ public class Person {
         }
         
         return null;
+        
+        /*  TODO (Замечания №1)
+            Если ни одно из условий не выполниться на вывод вернется null и
+            программа выкинет ошибку.
+            Исправить данный код!
+        
+            Невыполняется условие -  Если у человека нет Отчества, но есть
+            второе имя, то возвращает Имя, Первую букву второго имени, и Фамилию
+            Исправить!
+        */
     }
 
     /**
@@ -84,20 +100,26 @@ public class Person {
     public String getAddress() {
         
         if ( (address.getApart() != 0) && (address.getCorp()!= 0) ) {
-            return address.getCountry() + ", " + address.getArea() + ", " + address.getCity() + ", " + address.getIndex() + ", " + address.getHouseNumber() + ", " + address.getApart() + ", " + address.getCorp();
+            return address.getCountry() + ", " + address.getArea() + ", " + address.getCity() + ", " + address.getStreet() + ", " + address.getIndex() + ", " + address.getHouseNumber() + ", " + address.getApart() + ", " + address.getCorp();
         }
         if (address.getApart() != 0) {
-            return address.getCountry() + ", " + address.getArea() + ", " + address.getCity() + ", " + address.getIndex() + ", " + address.getHouseNumber() + ", " + address.getApart();
+            return address.getCountry() + ", " + address.getArea() + ", " + address.getCity()+ ", " + address.getStreet() + ", " + address.getIndex() + ", " + address.getHouseNumber() + ", " + address.getApart();
         }
         if (address.getCorp()!= 0) {
-            return address.getCountry() + ", " + address.getArea() + ", " + address.getCity() + ", " + address.getIndex() + ", " + address.getHouseNumber() + ", " + address.getCorp();
+            return address.getCountry() + ", " + address.getArea() + ", " + address.getCity() + ", " + address.getStreet() + ", " + address.getIndex() + ", " + address.getHouseNumber() + ", " + address.getCorp();
         }
         if ( (address.getApart() == 0) && (address.getCorp()== 0) ) {
-            return address.getCountry() + ", " + address.getArea() + ", " + address.getCity() + ", " + address.getIndex() + ", " + address.getHouseNumber() ;
+            return address.getCountry() + ", " + address.getArea() + ", " + address.getCity() + ", " + address.getStreet()+ ", " + address.getIndex() + ", " + address.getHouseNumber() ;
         }
         /*
          * TODO(Студент): Закончить определение метода 'getAddress()' класса 'Person'
          */
         return null;
+        
+        /*  TODO (Замечания №1)
+            Если ни одно из условий не выполниться на вывод вернется null и
+            программа выкинет ошибку.
+            Исправить данный код!
+        */
     }
 }
