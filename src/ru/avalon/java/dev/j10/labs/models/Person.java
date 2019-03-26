@@ -20,7 +20,7 @@ public class Person {
     
     public Person(Passport passport, Address address) {
         this.passport = passport;
-        this.address = address;
+        this.address = address; 
         
     }
     /*
@@ -60,18 +60,21 @@ public class Person {
         /*
          * TODO(Студент): Закончить определение метода 'getFullName()' класса 'Person'
          */
-  //      String fullName = "";
-        if ((!"".equals(passport.getFatherName ()))&&("".equals(passport.getSecName()))){
-            return passport.getName() + " " +  passport.getFatherName() + " " +passport.getSurname();
+        
+        if (passport.getFatherName() != null && passport.getSecName() == null) {
+            return passport.getName() + " " +  passport.getFatherName() + " " +passport.getSurname();            
         }
-        if (("".equals(passport.getFatherName()))&&(!"".equals(passport.getSecName()))) {
-            return passport.getName() + " " + passport.getSecName() + " " + passport.getSurname(); 
+        else if (passport.getFatherName() == null && passport.getSecName() != null) {
+            return passport.getName() + " " + passport.getSecName().charAt(0)+ ". " + passport.getSurname();
         }
-        if (("".equals(passport.getFatherName()))&&("".equals(passport.getSecName()))) {
+        else if (passport.getFatherName() != null && passport.getSecName() != null) {
+            return "Человек не может иметь Отчество и второе имя одновременно.";
+        }
+        else {
             return passport.getName() + " " + passport.getSurname();
         }
         
-        return null;
+        
     }
 
     /**
@@ -84,21 +87,23 @@ public class Person {
      */
     public String getAddress() {
         
-        if ( (address.getApart() != 0) && (address.getCorp()!= 0) ) {
-            return address.getCountry() + ", " + address.getArea() + ", " + address.getCity() + ", " + address.getStreet() + ", " + address.getIndex() + ", " + address.getHouseNumber() + ", " + address.getApart() + ", " + address.getCorp();
+        
+        
+        if ( (address.getIndex() != 0) && (address.getCorp()!= 0) ) {
+            return address.getIndex()+ ", " + address.getCountry() + ", " + address.getArea() + ", " + address.getCity() + ", " + address.getStreet()+ ", " + address.getHouseNumber() + ", " + address.getApart() + ", " + address.getCorp();
         }
-        if (address.getApart() != 0) {
-            return address.getCountry() + ", " + address.getArea() + ", " + address.getCity()+ ", " + address.getStreet() + ", " + address.getIndex() + ", " + address.getHouseNumber() + ", " + address.getApart();
+        else if (address.getIndex() != 0 && address.getCorp() == 0) {
+            return address.getIndex() + ", " + address.getCountry() + ", " + address.getArea() + ", " + address.getCity()+ ", " + address.getStreet() + ", " + address.getHouseNumber() + ", " + address.getApart();
         }
-        if (address.getCorp()!= 0) {
-            return address.getCountry() + ", " + address.getArea() + ", " + address.getCity() + ", " + address.getStreet() + ", " + address.getIndex() + ", " + address.getHouseNumber() + ", " + address.getCorp();
+        else if (address.getCorp()!= 0 && address.getIndex() == 0) {
+            return address.getCountry() + ", " + address.getArea() + ", " + address.getCity() + ", " + address.getStreet() + ", " + address.getHouseNumber() + ", " + address.getApart() + ", " + address.getCorp();
         }
-        if ( (address.getApart() == 0) && (address.getCorp()== 0) ) {
-            return address.getCountry() + ", " + address.getArea() + ", " + address.getCity() + ", " + address.getStreet()+ ", " + address.getIndex() + ", " + address.getHouseNumber() ;
+        else  {
+            return address.getCountry() + ", " + address.getArea() + ", " + address.getCity() + ", " + address.getStreet() + ", " + address.getHouseNumber() + ", " + address.getApart();
         }
         /*
          * TODO(Студент): Закончить определение метода 'getAddress()' класса 'Person'
          */
-        return null;
+         
     }
 }

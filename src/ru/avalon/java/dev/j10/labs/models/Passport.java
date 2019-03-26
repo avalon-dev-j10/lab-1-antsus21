@@ -38,45 +38,33 @@ public class Passport {
     public LocalDate getBirthday (){return birthday;}
     public LocalDate getDate (){return date;}
     public String getOrg (){return org;}
-    
-    // здесь был полный конструктор (никогда не используется, так что удалил его)
 
     // без отчества и второго имени
     public Passport (String series, int numPas, String name, String surName, LocalDate birthday, LocalDate date, String org) {
-        this.series = series;
-        this.numPas = numPas;
-        this.name = name;
-        this.surName = surName;
-        this.fatherName = "";
-        this.secName = "";
-        this.birthday = birthday;
-        this.date = date;
-        this.org = org;
+        this (series, numPas, name, surName, null, birthday, date, null, org);        
     }
     // без отчества
-    public Passport (String series, int numPas, String name, String secName, String surName, LocalDate birthday, LocalDate date, String org) {
-        this.series = series;
-        this.numPas = numPas;
-        this.name = name;
-        this.secName = secName;
-        this.surName = surName;
-        this.fatherName = "";
-        this.birthday = birthday;
-        this.date = date;
-        this.org = org;
+    public Passport (String series, int numPas, String name, String surName, LocalDate birthday, LocalDate date, String secName, String org) {
+        this (series, numPas, name, surName, null, birthday, date, secName, org);
     }
     // без второго имени
-    public Passport (String series, int numPas, LocalDate date, String name,String fatherName, String surName, LocalDate birthday,  String org) {
+    public Passport (String series, int numPas, String name, String surName, String fatherName, LocalDate birthday, LocalDate date, String org) {
+        this (series, numPas, name, surName, fatherName, birthday, date, null , org);
+    }
+    // полный конструктор 
+    public Passport (String series, int numPas, String name, String surName, String fatherName, LocalDate birthday, LocalDate date, String secName, String org) {
         this.series = series;
         this.numPas = numPas;
-        this.date = date;
-        this.name = name;
-        this.surName = surName;
-        this.birthday = birthday;
+        this.name = name; 
+        this.surName = surName;      
         this.fatherName = fatherName;
-        this.secName = "";
+        this.birthday = birthday;
+        this.date = date;
+        this.secName = secName;
         this.org = org;
     }
+        
+        
 
     /*
      * TODO(Студент): Закончить определение класса.
