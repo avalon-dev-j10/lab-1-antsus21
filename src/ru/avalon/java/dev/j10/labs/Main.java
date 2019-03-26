@@ -19,21 +19,22 @@ public class Main {
 
         Person ivanov = null;
         Person smith = null;
-
+ 
         
-        ivanov = new Person( new Passport("3245", 345657, LocalDate.of(1990, Month.MARCH, 24),
-                                         "Иван","Иванович","Иванов",LocalDate.of(1982, 6, 21),"Выдан организацией..."),
-                             new Address("Россия","Ленинградская обл.","Санкт-Петербург","дом 88",123677));
+        ivanov = new Person( new Passport("3245", 345657, "Иван","Иванов","Иванович", LocalDate.of(1966, 2, 22), LocalDate.of(1982, 6, 21),"Выдан организацией..."),
+                             new Address(123677, "Россия","Ленинградская обл.","Санкт-Петербург","ул. А. Невского","дом 88", 1198));
         
-        smith = new Person( new Passport("", 23132,"John","Edvard","Smith",LocalDate.of(1965, 11, 11), LocalDate.of(1983, 12, 23),"LAPD"),
-                            new Address("USA","CALIFORNIA","Los Angeles",883667,"78",1267));
+        smith = new Person( new Passport("3555", 231232,"John", "Smith",LocalDate.of(1965, 11, 11), LocalDate.of(1983, 12, 23),"Edvard", "LAPD"),
+                            new Address(883667,"USA","CALIFORNIA","Los Angeles","Green Street","78",1267));
         
+        System.out.println("------------------------------------------------------------------------------------");       
         System.out.println(ivanov.getFullName());   
         System.out.println(ivanov.getAddress());
-        System.out.println("");
-        System.out.println("");
+        System.out.println("------------------------------------------------------------------------------------");
+        System.out.println("------------------------------------------------------------------------------------");
         System.out.println(smith.getFullName());
         System.out.println(smith.getAddress());
+        System.out.println("------------------------------------------------------------------------------------");
         
         /*
          * TODO(Студент): Создайте экземпляры класса 'Person'
